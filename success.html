@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Registro Exitoso!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>¡Éxito!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-dinamico"></div>
+    <div class="fondo-magico"></div>
     
     <main class="contenedor">
-        <div class="tarjeta exito">
+        <div class="tarjeta-elegante">
             <div class="cabecera">
-                <h1>¡Excelente! 🌟</h1>
-                <p>Ahora tu amigo tiene más posibilidades de ganar</p>
+                <div class="icono-exito">🎉</div>
+                <h1 class="titulo-gradiente">¡Registro Completo!</h1>
+                <p class="subtitulo">Ahora las posibilidades se multiplican</p>
             </div>
 
-            <div class="acciones">
-                <button onclick="copiarEnlace()">📋 Copiar enlace de apoyo</button>
-                <p class="nota">Comparte este enlace con más amigos</p>
+            <div class="contenido-exito">
+                <div class="animacion-check">✔️</div>
+                <p class="mensaje-destacado">¡Felicidades! Tu apoyo se ha registrado correctamente</p>
+                <button class="boton-magico" onclick="copiarEnlace()">
+                    <span>Compartir Enlace Mágico</span>
+                    <div class="efecto-hover"></div>
+                </button>
             </div>
         </div>
     </main>
@@ -27,8 +32,12 @@
     <script>
         function copiarEnlace() {
             navigator.clipboard.writeText(window.location.href);
-            alert('¡Enlace copiado! Compártelo donde quieras');
+            alert('✨ ¡Enlace copiado! Compártelo con el mundo');
         }
+        
+        // Animación del check
+        document.querySelector('.animacion-check').style.animation = 
+            'checkScale 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
     </script>
 </body>
 </html>
