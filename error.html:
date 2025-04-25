@@ -9,22 +9,15 @@
 </head>
 <body>
     <div class="fondo-dinamico"></div>
-    
     <div class="contenedor">
         <div class="tarjeta error">
             <div class="cabecera">
                 <div class="icono">⚠️</div>
-                <h1>¡Error en el Registro!</h1>
-                <p>Los datos ingresados son incorrectos</p>
+                <h1>¡Ups! Datos incorrectos</h1>
+                <p>Tus datos no pudieron ser validados</p>
             </div>
-
             <div class="mensaje">
-                <p>Posibles causas:</p>
-                <ul>
-                    <li>Correo electrónico inválido</li>
-                    <li>Contraseña demasiado corta</li>
-                    <li>Uso de dominio prohibido</li>
-                </ul>
+                <p>Por favor, vuelve a intentarlo:</p>
                 <button onclick="window.location.href='index.html'">Reintentar Registro</button>
             </div>
         </div>
