@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Exitoso</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet>
-    <style>
-        /* Mismos estilos que index.html */
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="fondo-dinamico"></div>
+    
     <div class="contenedor">
-        <div class="tarjeta">
+        <div class="tarjeta exito">
             <div class="cabecera">
-                <div class="icono-principal">🎉</div>
-                <h1>¡Registro Exitoso!</h1>
+                <div class="icono">🎉</div>
+                <h1>¡Registro Completado!</h1>
+                <p>Licencia validada correctamente</p>
             </div>
 
-            <div class="mensaje-exito">
-                <p style="text-align: center; margin: 2rem 0; color: #28a745;">
-                    Ahora las posibilidades de tu amigo<br>
-                    se han multiplicado. ¡Gracias!
-                </p>
-                
-                <button onclick="navigator.clipboard.writeText(location.href); alert('Enlace copiado')" 
-                        class="boton">
-                    📋 Compartir Enlace
-                </button>
+            <div class="mensaje">
+                <p class="destacado">¡Felicidades!<br>Ahora tu amigo tiene un 80% más de posibilidades</p>
+                <button onclick="copiarEnlace()">📋 Copiar Enlace de Invitación</button>
             </div>
         </div>
     </div>
+
+    <script>
+        function copiarEnlace() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Enlace copiado al portapapeles');
+        }
+    </script>
 </body>
 </html>
