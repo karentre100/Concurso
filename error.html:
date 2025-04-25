@@ -4,35 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error de Validación</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-dinamico"></div>
-    
-    <main class="contenedor">
-        <div class="tarjeta-elevada">
-            <div class="cabecera">
-                <div class="icono-3d animate__animated animate__shakeX">❌</div>
-                <h1 class="titulo-gradiente">¡Validación Fallida!</h1>
-                <p class="subtitulo-neon">Credenciales no reconocidas</p>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="icon">⚠️</div>
+                <h1>Validación Requerida</h1>
+                <p class="subtitle">Por favor completa los campos correctamente</p>
             </div>
 
-            <div class="mensaje-error-completo">
-                <p class="descripcion-error">El sistema no pudo verificar tus datos.<br>
-                <strong>Posibles causas:</strong></p>
-                <ul class="lista-errores">
-                    <li>⛔ Cuenta Gmail detectada</li>
-                    <li>🔒 Contraseña muy débil</li>
-                    <li>📛 Datos incompletos</li>
-                </ul>
+            <div class="error-content">
+                <p>El correo electrónico ingresado no es válido.</p>
+                <button onclick="window.location.href='index.html'" class="primary-button">
+                    Reintentar
+                </button>
             </div>
-
-            <button onclick="window.location.href='index.html'" class="boton-neumorfico">
-                <span class="texto-boton">Reintentar Validación</span>
-                <div class="carga-efecto"></div>
-            </button>
         </div>
-    </main>
+    </div>
 </body>
 </html>
