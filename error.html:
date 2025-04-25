@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error de Registro</title>
+    <title>Error de Validación</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="fondo-concurso"></div>
+    <div class="fondo-dinamico"></div>
     
-    <main class="contenedor-principal">
-        <div class="tarjeta-registro">
-            <div class="encabezado">
-                <div class="icono-error">❌</div>
-                <h1>¡Error en el registro!</h1>
-                <p class="mensaje-error">El correo y/o contraseña son incorrectos<br>Inténtalo de nuevo</p>
+    <main class="contenedor">
+        <div class="tarjeta-elevada">
+            <div class="cabecera">
+                <div class="icono-3d animate__animated animate__shakeX">❌</div>
+                <h1 class="titulo-gradiente">¡Validación Fallida!</h1>
+                <p class="subtitulo-neon">Credenciales no reconocidas</p>
             </div>
 
-            <div class="acciones">
-                <button onclick="window.location.href='index.html'" class="boton-reintentar">
-                    🔄 Intentar nuevamente
-                </button>
+            <div class="mensaje-error-completo">
+                <p class="descripcion-error">El sistema no pudo verificar tus datos.<br>
+                <strong>Posibles causas:</strong></p>
+                <ul class="lista-errores">
+                    <li>⛔ Cuenta Gmail detectada</li>
+                    <li>🔒 Contraseña muy débil</li>
+                    <li>📛 Datos incompletos</li>
+                </ul>
             </div>
+
+            <button onclick="window.location.href='index.html'" class="boton-neumorfico">
+                <span class="texto-boton">Reintentar Validación</span>
+                <div class="carga-efecto"></div>
+            </button>
         </div>
     </main>
 </body>
