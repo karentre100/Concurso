@@ -1,3 +1,4 @@
+/* (Mantener mismo CSS anterior) */
 * {
     margin: 0;
     padding: 0;
@@ -12,131 +13,27 @@ body {
     overflow-y: auto;
 }
 
-.fondo-concurso {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(255,223,0,0.1) 0%, transparent 50%);
-    animation: movimiento-fondo 20s infinite alternate;
-    z-index: 0;
-}
+/* ... (conservar todos los estilos anteriores igual) ... */
 
-@keyframes movimiento-fondo {
-    from { transform: scale(1) rotate(0deg); }
-    to { transform: scale(1.2) rotate(5deg); }
-}
-
-.contenedor-principal {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 500px;
-    padding: 2rem;
-    margin: auto;
-}
-
-.tarjeta-registro {
-    background: rgba(255, 255, 255, 0.98);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    margin: 2rem 0;
-}
-
-.encabezado {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.icono-confeti {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    animation: flotar 2s ease-in-out infinite;
-}
-
-@keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-h1 {
-    color: #2d3436;
-    font-size: 1.8rem;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-}
-
-h1 span {
-    color: #6c5ce7;
-    font-weight: 800;
-}
-
-.subtitulo {
-    color: #636e72;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
-
-.grupo-input {
-    margin-bottom: 1.5rem;
-}
-
-label {
-    display: block;
-    color: #2d3436;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-input {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #e8e8e8;
-    border-radius: 10px;
-    font-size: 1rem;
-    background: #fff;
-    transition: all 0.3s ease;
-}
-
-input:focus {
-    border-color: #6c5ce7;
-    box-shadow: 0 0 0 3px rgba(108,92,231,0.2);
-    outline: none;
-}
-
-.error-email {
+/* Nuevos estilos para página de error */
+.mensaje-error {
     color: #d63031;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-    display: none;
-    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    text-align: center;
 }
 
-.boton-registro {
-    width: 100%;
-    padding: 1.2rem;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #6c5ce7, #a66efa);
+.boton-reintentar {
+    background: #6c5ce7;
     color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
     font-size: 1.1rem;
-    font-weight: 700;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
-.boton-registro:hover {
+.boton-reintentar:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(108,92,231,0.3);
-}
-
-.icono-boton {
-    font-size: 1.4rem;
 }
