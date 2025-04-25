@@ -4,40 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Éxito!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <div class="fondo-magico"></div>
+    <div id="particles-js"></div>
     
     <main class="contenedor">
-        <div class="tarjeta-elegante">
+        <div class="tarjeta">
             <div class="cabecera">
-                <div class="icono-exito">🎉</div>
-                <h1 class="titulo-gradiente">¡Registro Completo!</h1>
-                <p class="subtitulo">Ahora las posibilidades se multiplican</p>
+                <h1 class="titulo-animado">¡Registro Completo!<span class="emoji">🎉</span></h1>
+                <p class="subtitulo">Ahora las posibilidades se han multiplicado</p>
             </div>
 
             <div class="contenido-exito">
-                <div class="animacion-check">✔️</div>
-                <p class="mensaje-destacado">¡Felicidades! Tu apoyo se ha registrado correctamente</p>
-                <button class="boton-magico" onclick="copiarEnlace()">
-                    <span>Compartir Enlace Mágico</span>
-                    <div class="efecto-hover"></div>
+                <canvas id="confetti-canvas"></canvas>
+                <button class="boton-3d" onclick="copiarEnlace()">
+                    <span>Compartir Enlace VIP</span>
+                    <div class="brillo"></div>
                 </button>
             </div>
         </div>
     </main>
 
     <script>
+        // Efecto confeti
+        const confetti = confetti.create(document.getElementById('confetti-canvas'), {
+            resize: true,
+            useWorker: true
+        });
+
+        confetti({
+            particleCount: 100,
+            spread: 160,
+            origin: { y: 0.6 }
+        });
+
         function copiarEnlace() {
             navigator.clipboard.writeText(window.location.href);
-            alert('✨ ¡Enlace copiado! Compártelo con el mundo');
+            confetti({
+                particleCount: 50,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 }
+            });
+            confetti({
+                particleCount: 50,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 }
+            });
         }
-        
-        // Animación del check
-        document.querySelector('.animacion-check').style.animation = 
-            'checkScale 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
     </script>
+    <script src="particles.js"></script>
 </body>
 </html>
