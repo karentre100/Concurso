@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error de Validación</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="header">
-                <div class="icon">⚠️</div>
-                <h1>Validación Requerida</h1>
-                <p class="subtitle">Por favor completa los campos correctamente</p>
+    <div class="fondo-concurso"></div>
+    
+    <main class="contenedor">
+        <div class="tarjeta-registro">
+            <div class="encabezado">
+                <div class="icono">❌</div>
+                <h1>¡Error en el Registro!</h1>
+                <p class="subtitulo">Por favor intenta nuevamente</p>
             </div>
 
-            <div class="error-content">
-                <p>El correo electrónico ingresado no es válido.</p>
-                <button onclick="window.location.href='index.html'" class="primary-button">
+            <div class="mensaje-error">
+                <p>El correo y/o contraseña ingresados son incorrectos</p>
+                <button onclick="window.location.href='index.html'" class="boton-principal">
                     Reintentar
                 </button>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
