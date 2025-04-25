@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Exitoso</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registro Exitoso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-dinamico"></div>
-    <div class="contenedor">
-        <div class="tarjeta exito">
-            <div class="cabecera">
-                <div class="icono">🎉</div>
-                <h1>¡Registro Completado!</h1>
-                <p>Licencia validada correctamente</p>
-            </div>
-            <div class="mensaje">
-                <p class="destacado">¡Felicidades!<br>Ahora las posibilidades de tu amigo se han multiplicado</p>
-                <button onclick="compartir()">📤 Compartir Invitación</button>
-            </div>
-        </div>
+  <div class="fondo"></div>
+  <main class="contenedor">
+    <div class="tarjeta exito">
+      <header class="cabecera">
+        <h1>¡Registro completado!</h1>
+        <p>Gracias por registrarte 😊</p>
+      </header>
+      <p class="destacado">Ahora tu amigo tiene muchas más posibilidades de ganar el premio.</p>
+      <button onclick="compartir()">Compartir invitación</button>
     </div>
-    <script>
-        function compartir() {
-            const shareData = {
-                title: 'Invitación para participar',
-                text: '¡Multiplica las posibilidades de tu amigo! Regístrate aquí:',
-                url: window.location.href
-            };
-            if (navigator.share) {
-                navigator.share(shareData).catch(console.error);
-            } else {
-                navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
-                alert('Enlace copiado al portapapeles');
-            }
-        }
-    </script>
+  </main>
+  <script>
+    function compartir() {
+      const data = { title: 'Participa y ayuda a mi amigo', text: '¡Regístrate aquí!', url: window.location.href };
+      if (navigator.share) navigator.share(data).catch(console.error);
+      else {
+        navigator.clipboard.writeText(`${data.text} ${data.url}`);
+        alert('Enlace copiado al portapapeles');
+      }
+    }
+  </script>
 </body>
 </html>
