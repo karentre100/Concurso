@@ -8,11 +8,8 @@
 body {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(135deg, #6c5ce7, #a66efa);
-    position: relative;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .fondo-concurso {
@@ -23,6 +20,7 @@ body {
         radial-gradient(circle at 10% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
         radial-gradient(circle at 90% 80%, rgba(255,223,0,0.1) 0%, transparent 50%);
     animation: movimiento-fondo 20s infinite alternate;
+    z-index: 0;
 }
 
 @keyframes movimiento-fondo {
@@ -35,26 +33,27 @@ body {
     z-index: 1;
     width: 100%;
     max-width: 500px;
-    padding: 1.5rem;
+    padding: 2rem;
+    margin: auto;
 }
 
 .tarjeta-registro {
     background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(12px);
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    text-align: center;
+    margin: 2rem 0;
 }
 
 .encabezado {
+    text-align: center;
     margin-bottom: 2rem;
 }
 
 .icono-confeti {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
-    animation: flotar 2.5s ease-in-out infinite;
+    animation: flotar 2s ease-in-out infinite;
 }
 
 @keyframes flotar {
@@ -62,31 +61,26 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-.titulo-principal {
+h1 {
     color: #2d3436;
     font-size: 1.8rem;
     line-height: 1.4;
     margin-bottom: 0.5rem;
-    font-weight: 700;
 }
 
-.titulo-principal span {
+h1 span {
     color: #6c5ce7;
-    display: block;
     font-weight: 800;
 }
 
 .subtitulo {
     color: #636e72;
     font-size: 1rem;
-    font-weight: 500;
     margin-top: 0.5rem;
 }
 
 .grupo-input {
     margin-bottom: 1.5rem;
-    text-align: left;
-    position: relative;
 }
 
 label {
@@ -134,7 +128,7 @@ input:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -145,5 +139,4 @@ input:focus {
 
 .icono-boton {
     font-size: 1.4rem;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
 }
