@@ -1,113 +1,161 @@
 :root {
-    --primary-color: #2563eb;
-    --error-color: #dc2626;
-    --background: #f8fafc;
-    --text-color: #1e293b;
+    --color-primario: #6c5ce7;
+    --color-error: #ff4757;
+    --degradado-fondo: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    background: var(--background);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    background: var(--degradado-fondo);
+    overflow-y: auto;
+    padding: 20px;
 }
 
-.container {
+.fondo-concurso {
+    position: fixed;
+    width: 200vw;
+    height: 200vh;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 20%, transparent 20%);
+    background-size: 30px 30px;
+    opacity: 0.1;
+    animation: movimiento 20s linear infinite;
+}
+
+@keyframes movimiento {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.contenedor {
     width: 100%;
-    max-width: 480px;
+    max-width: 500px;
+    z-index: 1;
 }
 
-.card {
-    background: white;
-    border-radius: 16px;
+.tarjeta-registro {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
 }
 
-.header {
+.encabezado {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.icon {
-    font-size: 3rem;
+.icono {
+    font-size: 4rem;
+    color: var(--color-primario);
     margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 6px rgba(108,92,231,0.2));
 }
 
 h1 {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    font-weight: 600;
+    color: #2d3436;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
-.subtitle {
-    color: #64748b;
-    font-size: 0.875rem;
+.subtitulo {
+    color: #636e72;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-.input-group {
+.grupo-input {
     margin-bottom: 1.5rem;
 }
 
 label {
     display: block;
-    color: var(--text-color);
-    font-size: 0.875rem;
-    font-weight: 500;
+    color: #4a4a4a;
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 input {
     width: 100%;
-    padding: 0.875rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    padding: 1rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
     font-size: 1rem;
-    transition: border-color 0.2s;
+    transition: all 0.3s ease;
 }
 
 input:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(108,92,231,0.1);
 }
 
-.error-message {
-    color: var(--error-color);
-    font-size: 0.75rem;
+.error-email {
+    color: var(--color-error);
+    font-size: 0.8rem;
     margin-top: 0.5rem;
     display: none;
 }
 
-.primary-button {
+.boton-principal {
     width: 100%;
-    padding: 0.875rem;
-    background: var(--primary-color);
+    padding: 1rem;
+    background: var(--color-primario);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
-.primary-button:hover {
-    background: #1d4ed8;
+.boton-principal:hover {
+    transform: translateY(-2px);
 }
 
-@media (max-width: 480px) {
-    .card {
-        padding: 1.5rem;
-    }
+.spinner {
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    left: calc(50% - 10px);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.aviso-legal {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(245,245,245,0.9);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.icono-seguridad {
+    font-size: 1.2rem;
 }
