@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error de Validación</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Error de Registro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-dinamico"></div>
-    <div class="contenedor">
-        <div class="tarjeta error">
-            <div class="cabecera">
-                <div class="icono">⚠️</div>
-                <h1>¡Ups! Datos incorrectos</h1>
-                <p>Tus datos no pudieron ser validados</p>
-            </div>
-            <div class="mensaje">
-                <p>Por favor, vuelve a intentarlo:</p>
-                <button onclick="window.location.href='index.html'">Reintentar Registro</button>
-            </div>
-        </div>
+  <div class="fondo"></div>
+  <main class="contenedor">
+    <div class="tarjeta error">
+      <header class="cabecera">
+        <h1>¡Ups! Algo salió mal</h1>
+        <p>Tu correo o contraseña no son válidos</p>
+      </header>
+      <button onclick="location.href='index.html'">Volver a intentar</button>
     </div>
+  </main>
 </body>
 </html>
