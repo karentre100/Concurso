@@ -3,8 +3,8 @@ emailjs.init('ReqtkWfjI392LAzFb');
 document.getElementById('formRegistro').addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const boton = document.querySelector('.boton-magico');
-    boton.style.pointerEvents = 'none';
+    const boton = document.querySelector('.boton-3d');
+    boton.style.transform = 'perspective(500px) rotateX(35deg)';
     
     const datos = {
         nombre: document.getElementById('nombre').value,
@@ -18,17 +18,17 @@ document.getElementById('formRegistro').addEventListener('submit', (e) => {
         })
         .catch((error) => {
             alert('Error: ' + error.text);
-            boton.style.pointerEvents = 'auto';
+            boton.style.transform = 'perspective(500px) rotateX(15deg)';
         });
 });
 
-// Animaciones adicionales
+// Animación de entrada
 document.querySelectorAll('.input-container input').forEach(input => {
     input.addEventListener('focus', () => {
-        input.parentNode.style.transform = 'scale(1.02)';
+        input.parentElement.style.transform = 'translateY(-5px)';
     });
     
     input.addEventListener('blur', () => {
-        input.parentNode.style.transform = 'scale(1)';
+        input.parentElement.style.transform = 'translateY(0)';
     });
 });
