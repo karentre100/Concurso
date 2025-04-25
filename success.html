@@ -6,57 +6,30 @@
     <title>¡Éxito!</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
+    <div class="fondo-dinamico"></div>
     
     <main class="contenedor">
         <div class="tarjeta">
             <div class="cabecera">
-                <h1 class="titulo-animado">¡Registro Completo!<span class="emoji">🎉</span></h1>
-                <p class="subtitulo">Ahora las posibilidades se han multiplicado</p>
+                <div class="icono">🎉</div>
+                <h1>¡Registro Exitoso!</h1>
+                <p class="subtitulo">Ahora tu amigo tiene más posibilidades de ganar</p>
             </div>
 
-            <div class="contenido-exito">
-                <canvas id="confetti-canvas"></canvas>
-                <button class="boton-3d" onclick="copiarEnlace()">
-                    <span>Compartir Enlace VIP</span>
-                    <div class="brillo"></div>
-                </button>
+            <div class="acciones">
+                <button onclick="copiarEnlace()">📋 Copiar enlace</button>
+                <p class="nota">Comparte con más amigos</p>
             </div>
         </div>
     </main>
 
     <script>
-        // Efecto confeti
-        const confetti = confetti.create(document.getElementById('confetti-canvas'), {
-            resize: true,
-            useWorker: true
-        });
-
-        confetti({
-            particleCount: 100,
-            spread: 160,
-            origin: { y: 0.6 }
-        });
-
         function copiarEnlace() {
             navigator.clipboard.writeText(window.location.href);
-            confetti({
-                particleCount: 50,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 }
-            });
-            confetti({
-                particleCount: 50,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 }
-            });
+            alert('Enlace copiado al portapapeles');
         }
     </script>
-    <script src="particles.js"></script>
 </body>
 </html>
