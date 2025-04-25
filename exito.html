@@ -8,20 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="fondo-concurso"></div>
+    <div class="fondo-dinamico"></div>
     
-    <main class="contenedor-principal">
-        <div class="tarjeta-registro">
-            <div class="encabezado">
-                <div class="icono-check">✅</div>
-                <h1>¡Registrado con éxito!</h1>
-                <p class="mensaje-exito">Ahora tu amigo tiene<br><strong>más posibilidades de ganar</strong></p>
+    <main class="contenedor">
+        <div class="tarjeta-elevada">
+            <div class="cabecera">
+                <div class="icono-3d animate__animated animate__tada">🎉</div>
+                <h1 class="titulo-gradiente">¡Validación Exitosa!</h1>
+                <p class="subtitulo-neon">Registro completado con éxito</p>
             </div>
 
-            <div class="acciones">
-                <button class="boton-compartir" onclick="copiarEnlace()">
-                    📢 Compartir enlace
-                </button>
+            <div class="panel-exito">
+                <div class="estadistica-exito">
+                    <div class="indicador-circular">
+                        <div class="progreso"></div>
+                        <span class="porcentaje">+70%</span>
+                    </div>
+                    <p class="texto-estadistica">Incremento en probabilidades</p>
+                </div>
+
+                <div class="acciones-exito">
+                    <button onclick="copiarEnlace()" class="boton-neumorfico">
+                        <span class="texto-boton">Compartir Enlace VIP</span>
+                        <div class="carga-efecto"></div>
+                    </button>
+                </div>
             </div>
         </div>
     </main>
@@ -29,7 +40,7 @@
     <script>
         function copiarEnlace() {
             navigator.clipboard.writeText(window.location.href);
-            alert('¡Enlace copiado! Compártelo con más amigos');
+            alert('Enlace premium copiado: compártelo de forma segura');
         }
     </script>
 </body>
