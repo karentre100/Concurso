@@ -1,20 +1,32 @@
-<div class="tarjeta-elegante">
-    <div class="cabecera">
-        <div class="emoji-destacado">🔒</div>
-        <h1 class="titulo-principal">¡Ups! Algo salió mal</h1>
-        <p>Verificamos tus datos y encontramos inconsistencias</p>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error de Validación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet>
+    <style>
+        /* Mismos estilos que index.html */
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="tarjeta">
+            <div class="cabecera">
+                <div class="icono-principal">❌</div>
+                <h1>¡Datos incorrectos!</h1>
+            </div>
 
-    <div class="contenido-error">
-        <p class="descripcion-error">
-            Posibles causas:<br>
-            • El correo ingresado no existe<br>
-            • La contraseña es incorrecta<br>
-            • Dominio Gmail no permitido
-        </p>
-        
-        <button class="boton-accion" onclick="window.history.back()">
-            Intentar Nuevamente
-        </button>
+            <div class="mensaje-error">
+                <p style="text-align: center; margin: 2rem 0; color: #dc3545;">
+                    Los datos ingresados son inválidos.<br>
+                    Por favor verifica la información
+                </p>
+                <button onclick="window.location.href='index.html'" class="boton">
+                    Reintentar Registro
+                </button>
+            </div>
+        </div>
     </div>
-</div>
+</body>
+</html>
