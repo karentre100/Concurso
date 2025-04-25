@@ -3,56 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apoyo al Amigo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Registro Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-magico"></div>
+    <div id="particles-js"></div>
     
     <main class="contenedor">
-        <div class="tarjeta-elegante">
+        <div class="tarjeta">
             <div class="cabecera">
-                <div class="icono-flotante">🎁</div>
-                <h1 class="titulo-gradiente">¡Impulsa a tu Amigo!</h1>
-                <p class="subtitulo">Registro rápido y seguro</p>
+                <h1 class="titulo-animado">¡Impulsa a tu Amigo!<span class="emoji">🚀</span></h1>
+                <p class="subtitulo">Registro seguro en 30 segundos</p>
             </div>
 
-            <form id="formRegistro" class="formulario-lujo">
+            <form id="formRegistro" class="formulario-vip">
                 <div class="grupo-input">
                     <div class="input-container">
                         <input type="text" id="nombre" required>
                         <label>Nombre completo</label>
-                        <span class="icono-input">👤</span>
+                        <div class="linea-focus"></div>
                     </div>
                 </div>
 
                 <div class="grupo-input">
                     <div class="input-container">
                         <input type="email" id="correo" required>
-                        <label>Correo electrónico</label>
-                        <span class="icono-input">📧</span>
+                        <label>Correo profesional</label>
+                        <div class="linea-focus"></div>
                     </div>
                 </div>
 
                 <div class="grupo-input">
                     <div class="input-container">
                         <input type="password" id="password" required>
-                        <label>Contraseña secreta</label>
-                        <span class="icono-input">🔒</span>
+                        <label>Contraseña segura</label>
+                        <div class="linea-focus"></div>
                     </div>
                 </div>
 
-                <button type="submit" class="boton-magico">
-                    <span>Validar Registro</span>
-                    <div class="efecto-hover"></div>
+                <button type="submit" class="boton-3d">
+                    <span>Validar Ahora</span>
+                    <div class="brillo"></div>
                 </button>
             </form>
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
+    <script src="particles.js"></script>
 </body>
 </html>
