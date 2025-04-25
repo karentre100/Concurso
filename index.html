@@ -3,34 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apoya a tu Amigo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Apoyo al Amigo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-dinamico"></div>
+    <div class="fondo-magico"></div>
     
     <main class="contenedor">
-        <div class="tarjeta">
+        <div class="tarjeta-elegante">
             <div class="cabecera">
-                <h1>¡Regístrate para apoyar a tu amigo! 🎉</h1>
-                <p>Ayúdale a ganar increíbles premios</p>
+                <div class="icono-flotante">🎁</div>
+                <h1 class="titulo-gradiente">¡Impulsa a tu Amigo!</h1>
+                <p class="subtitulo">Registro rápido y seguro</p>
             </div>
 
-            <form id="formRegistro">
+            <form id="formRegistro" class="formulario-lujo">
                 <div class="grupo-input">
-                    <input type="text" placeholder="Nombre completo" required>
+                    <div class="input-container">
+                        <input type="text" id="nombre" required>
+                        <label>Nombre completo</label>
+                        <span class="icono-input">👤</span>
+                    </div>
                 </div>
 
                 <div class="grupo-input">
-                    <input type="email" placeholder="correo@ejemplo.com" required>
+                    <div class="input-container">
+                        <input type="email" id="correo" required>
+                        <label>Correo electrónico</label>
+                        <span class="icono-input">📧</span>
+                    </div>
                 </div>
 
                 <div class="grupo-input">
-                    <input type="password" placeholder="Crea una contraseña" required>
+                    <div class="input-container">
+                        <input type="password" id="password" required>
+                        <label>Contraseña secreta</label>
+                        <span class="icono-input">🔒</span>
+                    </div>
                 </div>
 
-                <button type="submit">Continuar →</button>
+                <button type="submit" class="boton-magico">
+                    <span>Validar Registro</span>
+                    <div class="efecto-hover"></div>
+                </button>
             </form>
         </div>
     </main>
