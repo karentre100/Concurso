@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Exitoso</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="header">
-                <div class="icon">🎯</div>
+    <div class="fondo-concurso"></div>
+    
+    <main class="contenedor">
+        <div class="tarjeta-registro">
+            <div class="encabezado">
+                <div class="icono">🎉</div>
                 <h1>¡Registro Completado!</h1>
-                <p class="subtitle">Ahora tu amigo tiene más posibilidades de ganar</p>
+                <p class="subtitulo">Ahora tu amigo tiene más oportunidades</p>
             </div>
 
-            <div class="success-content">
-                <p>Comparte el enlace con más amigos:</p>
+            <div class="acciones">
                 <button onclick="navigator.clipboard.writeText(window.location.href); alert('Enlace copiado')" 
-                        class="primary-button">
-                    📋 Copiar Enlace
+                        class="boton-principal">
+                    📋 Compartir Enlace
                 </button>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
