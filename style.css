@@ -1,7 +1,7 @@
 :root {
-    --color-primario: #FF6B6B;
-    --color-secundario: #6B6BFF;
-    --degradado: linear-gradient(135deg, #FF6B6B 0%, #6B6BFF 100%);
+    --color-primario: #6c5ce7;
+    --color-secundario: #a66efa;
+    --degradado: linear-gradient(135deg, #6c5ce7 0%, #a66efa 100%);
 }
 
 * {
@@ -16,38 +16,40 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-}
-
-.fondo-magico {
-    position: fixed;
-    width: 200vw;
-    height: 200vh;
     background: var(--degradado);
-    background-size: 200% 200%;
-    animation: fondoAnimado 15s ease infinite;
-    filter: blur(50px);
-    z-index: -1;
+    animation: fondoDinamico 15s ease infinite;
+    background-size: 400% 400%;
 }
 
-@keyframes fondoAnimado {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes fondoDinamico {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .contenedor {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 600px;
     padding: 2rem;
 }
 
-.tarjeta-elegante {
+.tarjeta {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 25px;
     padding: 3rem;
     box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255,255,255,0.3);
+    transform-style: preserve-3d;
 }
 
 .cabecera {
@@ -55,23 +57,18 @@ body {
     margin-bottom: 3rem;
 }
 
-.icono-flotante {
-    font-size: 5rem;
-    margin-bottom: 1.5rem;
-    animation: flotar 3s ease-in-out infinite;
-}
-
-@keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.titulo-gradiente {
+.titulo-animado {
+    font-size: 2.5rem;
     background: var(--degradado);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.5rem;
     margin-bottom: 1rem;
+    animation: tituloFlotante 3s ease-in-out infinite;
+}
+
+@keyframes tituloFlotante {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .subtitulo {
@@ -80,7 +77,7 @@ body {
     font-weight: 500;
 }
 
-.formulario-lujo {
+.formulario-vip {
     margin-top: 2rem;
 }
 
@@ -90,79 +87,100 @@ body {
 
 .input-container {
     position: relative;
+    margin: 1.5rem 0;
 }
 
 .input-container input {
     width: 100%;
-    padding: 1.5rem;
-    border: 2px solid #eee;
-    border-radius: 15px;
+    padding: 1.2rem;
+    border: none;
+    border-bottom: 2px solid #eee;
     font-size: 1rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding-left: 3.5rem;
+    transition: all 0.3s ease;
+    background: transparent;
 }
 
 .input-container input:focus {
-    border-color: var(--color-primario);
-    box-shadow: 0 0 0 4px rgba(255,107,107,0.1);
+    outline: none;
+    border-bottom-color: var(--color-primario);
 }
 
 .input-container label {
     position: absolute;
-    left: 3.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
+    left: 0;
+    top: 1rem;
     pointer-events: none;
     transition: all 0.3s ease;
+    color: #666;
 }
 
 .input-container input:focus ~ label,
 .input-container input:valid ~ label {
-    top: 10px;
-    transform: translateY(0);
+    transform: translateY(-25px);
     font-size: 0.8rem;
     color: var(--color-primario);
 }
 
-.icono-input {
+.linea-focus {
     position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: #666;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--degradado);
+    transition: all 0.3s ease;
 }
 
-.boton-magico {
+.input-container input:focus ~ .linea-focus {
+    width: 100%;
+}
+
+.boton-3d {
     width: 100%;
     padding: 1.5rem;
     background: var(--degradado);
     color: white;
     border: none;
-    border-radius: 15px;
+    border-radius: 12px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s;
+    transform: perspective(500px) rotateX(15deg);
+    transition: all 0.3s;
 }
 
-.boton-magico:hover {
-    transform: translateY(-3px);
+.boton-3d:hover {
+    transform: perspective(500px) rotateX(25deg) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(108,92,231,0.4);
 }
 
-.efecto-hover {
+.brillo {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.2);
-    top: 0;
-    left: -100%;
-    transition: left 0.4s;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%);
+    transform: rotate(45deg);
+    animation: brilloAnimado 3s infinite;
 }
 
-.boton-magico:hover .efecto-hover {
-    left: 100%;
+@keyframes brilloAnimado {
+    0% { left: -50%; }
+    100% { left: 150%; }
+}
+
+.emoji {
+    display: inline-block;
+    animation: rotacion 3s linear infinite;
+}
+
+@keyframes rotacion {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
