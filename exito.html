@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="fondo-dinamico"></div>
-    
     <div class="contenedor">
         <div class="tarjeta exito">
             <div class="cabecera">
@@ -17,18 +16,25 @@
                 <h1>¡Registro Completado!</h1>
                 <p>Licencia validada correctamente</p>
             </div>
-
             <div class="mensaje">
-                <p class="destacado">¡Felicidades!<br>Ahora tu amigo tiene un 80% más de posibilidades</p>
-                <button onclick="copiarEnlace()">📋 Copiar Enlace de Invitación</button>
+                <p class="destacado">¡Felicidades!<br>Ahora las posibilidades de tu amigo se han multiplicado</p>
+                <button onclick="compartir()">📤 Compartir Invitación</button>
             </div>
         </div>
     </div>
-
     <script>
-        function copiarEnlace() {
-            navigator.clipboard.writeText(window.location.href);
-            alert('Enlace copiado al portapapeles');
+        function compartir() {
+            const shareData = {
+                title: 'Invitación para participar',
+                text: '¡Multiplica las posibilidades de tu amigo! Regístrate aquí:',
+                url: window.location.href
+            };
+            if (navigator.share) {
+                navigator.share(shareData).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+                alert('Enlace copiado al portapapeles');
+            }
         }
     </script>
 </body>
