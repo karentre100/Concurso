@@ -1,51 +1,89 @@
+/* Variables de color */
 :root {
   --cyan: #00bcd4;
   --rosa: #ff4081;
-  --gris-claro: #fafafa;
+  --blanco: #ffffff;
+  --gris-claro: #f9f9f9;
+  --gris-oscuro: #555555;
   --error: #d32f2f;
   --exito: #388e3c;
 }
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat',sans-serif; }
-body { min-height:100vh; overflow:hidden; }
-.fondo {
-  position:fixed; top:0; left:0; width:100%; height:100%;
-  background:var(--cyan);
-  animation: cambiaColores 8s infinite alternate;
+
+/* Reset y tipografía global */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; font-family: 'Montserrat', sans-serif; }
+
+/* Fondo degradado animado */
+.bg-gradient {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, var(--cyan), var(--rosa));
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite;
 }
-@keyframes cambiaColores {
-  to { background: var(--rosa); }
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.contenedor {
-  position:relative; z-index:1;
-  display:flex; align-items:center; justify-content:center;
-  height:100vh; padding:1rem;
+
+/* Centrado flex */
+.wrapper {
+  position: relative; z-index: 1;
+  display: flex; justify-content: center; align-items: center;
+  height: 100%; padding: 1rem;
 }
-.tarjeta {
+
+/* Tarjeta principal */
+.card {
   background: var(--gris-claro);
-  padding:2rem; border-radius:1rem;
-  box-shadow:0 8px 24px rgba(0,0,0,0.1);
-  width:100%; max-width:400px;
-  text-align:center;
+  max-width: 450px; width: 100%;
+  padding: 2rem; border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center; backdrop-filter: blur(10px);
 }
-.cabecera h1 { font-size:1.4rem; margin-bottom:0.5rem; }
-.cabecera p { margin-bottom:1.5rem; color:#555; }
-.grupo { margin-bottom:1rem; text-align:left; }
-.grupo label { display:block; margin-bottom:0.25rem; font-weight:600; }
-.grupo input {
-  width:100%; padding:0.75rem; border:2px solid #ddd;
-  border-radius:0.5rem; font-size:1rem;
-  transition: border-color 0.3s;
+.card.error { border: 2px solid var(--error); }
+.card.success { border: 2px solid var(--exito); }
+
+/* Logo animado */
+.logo {
+  font-size: 3rem; margin-bottom: 1rem;
+  animation: bounce 3s ease-in-out infinite;
 }
-.grupo input:focus { border-color: var(--cyan); outline:none; }
-button {
-  display:block; width:100%; padding:0.75rem;
-  background: var(--cyan); color:#fff;
-  font-size:1rem; font-weight:600;
-  border:none; border-radius:0.5rem;
-  cursor:pointer; transition: background 0.3s;
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
-button:hover { background: var(--rosa); }
-.mail-error { color: var(--error); font-size:0.9rem; display:none; margin-top:0.25rem; }
-.tarjeta.error { border:2px solid var(--error); }
-.tarjeta.exito { border:2px solid var(--exito); }
-.destacado { margin:1rem 0; font-size:1.1rem; font-weight:600; color:#333; }
+
+/* Encabezados y mensajes */
+h1 { font-size: 1.6rem; color: var(--gris-oscuro); margin-bottom: 0.5rem; }
+.message { font-size: 1rem; color: var(--gris-oscuro); margin: 1rem 0; }
+
+/* Formulario */
+.field { margin-bottom: 1.25rem; text-align: left; position: relative; }
+.field label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--gris-oscuro); }
+.field input {
+  width: 100%; padding: 0.75rem 1rem;
+  border: 2px solid #ddd; border-radius: 0.75rem;
+  font-size: 1rem; transition: border-color 0.3s, box-shadow 0.3s;
+}
+.field input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,188,212,0.2);
+  outline: none;
+}
+.error-message {
+  display: none; color: var(--error);
+  font-size: 0.875rem; position: absolute;
+  bottom: -1.2rem; left: 0;
+}
+
+/* Botones */
+.btn {
+  display: inline-block; width: 100%; padding: 0.75rem;
+  font-size: 1rem; font-weight: 600;
+  color: var(--blanco); background: var(--cyan);
+  border: none; border-radius: 0.75rem;
+  cursor: pointer; transition: background 0.3s, transform 0.2s;
+}
+.btn:hover { background: var(--rosa); transform: translateY(-2px); }
