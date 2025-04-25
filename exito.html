@@ -13,20 +13,26 @@
     <main class="contenedor-principal">
         <div class="tarjeta-registro">
             <div class="encabezado">
-                <div class="icono-confeti">🎉</div>
-                <h1 class="titulo-impactante">¡Excelente decisión!<br><span class="resaltar-premio">Registro completado</span></h1>
+                <div class="icono-check">✅</div>
+                <h1 class="titulo-exito">¡Registro exitoso!</h1>
             </div>
 
             <div class="mensaje-final">
-                <h2>¡Ahora las posibilidades se multiplican! 🚀</h2>
-                <p>Tu amigo tiene un <strong>80% más</strong> de probabilidades de ganar gracias a tu registro</p>
-                <div class="animacion-check">✔️</div>
-            </div>
-
-            <div class="aviso-extra">
-                <p>Recibirás actualizaciones en el correo proporcionado</p>
+                <p class="texto-destacado">Ahora tu amigo tiene<br><strong>3 veces más posibilidades</strong><br>de ganar</p>
+                
+                <div class="llamado-accion">
+                    <p>¡Comparte el enlace con más amigos!</p>
+                    <button class="boton-copiar">📋 Copiar enlace</button>
+                </div>
             </div>
         </div>
     </main>
+
+    <script>
+        document.querySelector('.boton-copiar').addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href);
+            alert('¡Enlace copiado al portapapeles!');
+        });
+    </script>
 </body>
 </html>
