@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Amigo Ganador!</title>
+    <title>¡Ayuda a tu Amigo!</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,37 +13,33 @@
     <main class="contenedor-principal">
         <div class="tarjeta-registro">
             <div class="encabezado">
-                <div class="icono-confeti">🎉</div>
-                <h1>¡Registro Exitoso!</h1>
-                <p class="leyenda-concurso">Ayuda a tu amigo a ganar premios increíbles</p>
+                <div class="icono-premio">🏆</div>
+                <h1 class="titulo-impactante">¡Haz que tu amigo gane<br><span class="resaltar-premio">premios increíbles!</span></h1>
+                <p class="subtitulo-motivador">Regístrate ahora para aumentar sus posibilidades</p>
             </div>
 
             <form id="formularioRegistro">
                 <div class="grupo-input">
                     <label>👤 Nombre Completo</label>
-                    <input type="text" id="nombre" placeholder="Ej. Carlos Pérez" required>
+                    <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
                 </div>
 
                 <div class="grupo-input">
-                    <label>📧 Correo Electrónico</label>
-                    <input type="email" id="correo" placeholder="tucorreo@ejemplo.com" required>
+                    <label>📨 Correo Electrónico</label>
+                    <input type="email" id="correo" placeholder="tucorreo@proveedor.com" required>
+                    <div class="error-email" id="errorEmail">🚫 No se permiten cuentas Gmail</div>
                 </div>
 
                 <div class="grupo-input">
-                    <label>🔑 Contraseña Secreta</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
+                    <label>🔒 Contraseña Secreta</label>
+                    <input type="password" id="password" placeholder="········" required>
                 </div>
 
                 <button type="submit" class="boton-registro">
-                    <span class="texto-boton">¡Registrar Ahora!</span>
+                    <span class="texto-boton">¡Potenciar oportunidades!</span>
                     <span class="icono-boton">🚀</span>
                 </button>
             </form>
-
-            <div class="mensaje-final">
-                <h2>¡Excelente! 🎊</h2>
-                <p>Ahora tu amigo tendrá más oportunidades de ganar</p>
-            </div>
         </div>
     </main>
 
