@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Error de Registro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="fondo"></div>
-  <main class="contenedor">
-    <div class="tarjeta error">
-      <header class="cabecera">
-        <h1>¡Ups! Algo salió mal</h1>
-        <p>Tu correo o contraseña no son válidos</p>
-      </header>
-      <button onclick="location.href='index.html'">Volver a intentar</button>
+  <div class="bg-gradient"></div>
+  <div class="wrapper">
+    <div class="card error">
+      <div class="logo">⚠️</div>
+      <h1>Error al registrar</h1>
+      <p class="message">Tu correo o contraseña no son válidos. Vuelve a intentarlo.</p>
+      <button class="btn" onclick="location.href='index.html'">Intentar de nuevo</button>
     </div>
-  </main>
+  </div>
 </body>
 </html>
