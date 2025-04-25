@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error de Validación</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet>
-    <style>
-        /* Mismos estilos que index.html */
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="fondo-dinamico"></div>
+    
     <div class="contenedor">
-        <div class="tarjeta">
+        <div class="tarjeta error">
             <div class="cabecera">
-                <div class="icono-principal">❌</div>
-                <h1>¡Datos incorrectos!</h1>
+                <div class="icono">⚠️</div>
+                <h1>¡Error en el Registro!</h1>
+                <p>Los datos ingresados son incorrectos</p>
             </div>
 
-            <div class="mensaje-error">
-                <p style="text-align: center; margin: 2rem 0; color: #dc3545;">
-                    Los datos ingresados son inválidos.<br>
-                    Por favor verifica la información
-                </p>
-                <button onclick="window.location.href='index.html'" class="boton">
-                    Reintentar Registro
-                </button>
+            <div class="mensaje">
+                <p>Posibles causas:</p>
+                <ul>
+                    <li>Correo electrónico inválido</li>
+                    <li>Contraseña demasiado corta</li>
+                    <li>Uso de dominio prohibido</li>
+                </ul>
+                <button onclick="window.location.href='index.html'">Reintentar Registro</button>
             </div>
         </div>
     </div>
