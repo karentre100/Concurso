@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Registro de Apoyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-primario: #FF6B6B;
             --color-secundario: #FF9F43;
-            --degradado-dinamico: linear-gradient(45deg, #FF6B6B, #FF9F43, #FFD93D, #6BFF6B);
-            --sombra: 0 15px 40px rgba(0,0,0,0.15);
+            --degradado: linear-gradient(45deg, #FF6B6B, #FF9F43);
         }
 
         * {
@@ -25,10 +24,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: var(--degradado-dinamico);
-            background-size: 400% 400%;
-            animation: fondoAnimado 15s ease infinite;
-            overflow-y: auto;
+            background: var(--degradado);
+            animation: fondoAnimado 10s ease infinite;
+            background-size: 200% 200%;
         }
 
         @keyframes fondoAnimado {
@@ -37,29 +35,28 @@
             100% { background-position: 0% 50%; }
         }
 
-        .contenedor-principal {
+        .contenedor {
             width: 100%;
             max-width: 500px;
             padding: 2rem;
         }
 
-        .tarjeta-elegante {
+        .tarjeta {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            padding: 3rem;
-            box-shadow: var(--sombra);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
         }
 
         .cabecera {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
-        .emoji-destacado {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
+        .icono-principal {
+            font-size: 4rem;
+            margin-bottom: 1rem;
             animation: flotar 3s ease-in-out infinite;
         }
 
@@ -68,128 +65,103 @@
             50% { transform: translateY(-20px); }
         }
 
-        .titulo-principal {
+        h1 {
             color: #2d3436;
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
-            font-weight: 700;
-            position: relative;
         }
 
-        .titulo-principal::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--color-primario);
-            margin: 1rem auto;
+        .grupo-input {
+            margin-bottom: 1.5rem;
         }
 
-        .grupo-formulario {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .etiqueta-flotante {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #666;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            background: white;
-            padding: 0 0.5rem;
-        }
-
-        .input-moderno {
+        input {
             width: 100%;
-            padding: 1.2rem;
-            border: 2px solid #e0e0e0;
+            padding: 1rem;
+            border: 2px solid #eee;
             border-radius: 12px;
             font-size: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            padding-left: 1rem;
+            transition: all 0.3s ease;
         }
 
-        .input-moderno:focus {
+        input:focus {
+            outline: none;
             border-color: var(--color-primario);
-            box-shadow: 0 0 0 4px rgba(255,107,107,0.1);
+            box-shadow: 0 0 0 3px rgba(255,107,107,0.1);
         }
 
-        .input-moderno:focus ~ .etiqueta-flotante,
-        .input-moderno:not(:placeholder-shown) ~ .etiqueta-flotante {
-            top: 0;
-            transform: translateY(-50%) scale(0.9);
-            color: var(--color-primario);
-        }
-
-        .boton-accion {
+        .boton {
             width: 100%;
-            padding: 1.2rem;
-            background: var(--degradado-dinamico);
-            background-size: 200% auto;
+            padding: 1rem;
+            background: var(--degradado);
             color: white;
             border: none;
             border-radius: 12px;
             font-size: 1.1rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: 0.5s;
+            transition: transform 0.3s;
         }
 
-        .boton-accion:hover {
-            background-position: right center;
+        .boton:hover {
             transform: translateY(-2px);
         }
 
         .mensaje-error {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
             display: none;
-            background: rgba(255,71,87,0.1);
-            color: #ff4757;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            align-items: center;
-            gap: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="contenedor-principal">
-        <div class="tarjeta-elegante">
+    <div class="contenedor">
+        <div class="tarjeta">
             <div class="cabecera">
-                <div class="emoji-destacado">🎁</div>
-                <h1 class="titulo-principal">Ayuda a tu Amigo</h1>
-                <p>Registro rápido y seguro</p>
+                <div class="icono-principal">🤝</div>
+                <h1>Regístrate para ser<br>a tu amigo ganador</h1>
             </div>
 
-            <form id="formularioRegistro">
-                <div class="grupo-formulario">
-                    <input type="text" id="nombre" class="input-moderno" required>
-                    <label class="etiqueta-flotante">Nombre completo</label>
+            <form id="formRegistro">
+                <div class="grupo-input">
+                    <input type="text" placeholder="Nombre completo" id="nombre" required>
                 </div>
 
-                <div class="grupo-formulario">
-                    <input type="email" id="correo" class="input-moderno" required>
-                    <label class="etiqueta-flotante">Correo electrónico</label>
-                    <div class="mensaje-error" id="errorCorreo">
-                        ⚠️ Correos Gmail no permitidos
-                    </div>
+                <div class="grupo-input">
+                    <input type="email" placeholder="Correo electrónico" id="correo" required>
+                    <div class="mensaje-error" id="errorEmail">⚠️ No se permiten cuentas Gmail</div>
                 </div>
 
-                <div class="grupo-formulario">
-                    <input type="password" id="password" class="input-moderno" required>
-                    <label class="etiqueta-flotante">Contraseña segura</label>
+                <div class="grupo-input">
+                    <input type="password" placeholder="Contraseña" id="password" required>
                 </div>
 
-                <button type="submit" class="boton-accion">Registrar Ahora</button>
+                <button type="submit" class="boton">Validar Registro</button>
             </form>
         </div>
     </div>
 
     <script>
-        // Lógica de validación y envío
+        document.getElementById('formRegistro').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('correo').value;
+            let intentos = localStorage.getItem('intentos') || 0;
+
+            if(email.includes('@gmail.com')) {
+                document.getElementById('errorEmail').style.display = 'block';
+                return;
+            }
+
+            localStorage.setItem('intentos', ++intentos);
+
+            if(intentos < 2) {
+                window.location.href = 'error.html';
+            } else {
+                localStorage.removeItem('intentos');
+                window.location.href = 'exito.html';
+            }
+        });
     </script>
 </body>
 </html>
