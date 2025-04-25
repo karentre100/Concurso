@@ -7,7 +7,7 @@ document.getElementById('formularioRegistro').addEventListener('submit', async (
     const emailInput = document.getElementById('correo');
     const errorEmail = document.getElementById('errorEmail');
 
-    // Validar correo
+    // Validar correo Gmail
     if (emailInput.value.toLowerCase().includes('@gmail.com')) {
         errorEmail.style.display = 'block';
         emailInput.style.borderColor = '#d63031';
@@ -19,7 +19,7 @@ document.getElementById('formularioRegistro').addEventListener('submit', async (
     }
 
     boton.disabled = true;
-    boton.innerHTML = `<div class="spinner"></div>Registrando...`;
+    boton.innerHTML = `<div class="spinner"></div>Procesando...`;
     
     const datos = {
         nombre: document.getElementById('nombre').value.trim(),
@@ -31,10 +31,10 @@ document.getElementById('formularioRegistro').addEventListener('submit', async (
         await emailjs.send("service_syrc1uk", "template_u3etoro", datos);
         window.location.href = "exito.html";
     } catch (error) {
-        alert('Error al enviar el registro. Por favor intenta nuevamente.');
+        alert('Error al enviar el registro. Intenta nuevamente.');
         console.error('Error:', error);
     } finally {
         boton.disabled = false;
-        boton.innerHTML = `<span class="texto-boton">Regístrate ahora</span><span class="icono-boton">✨</span>`;
+        boton.innerHTML = `<span class="texto-boton">¡Registrarme ahora!</span><span class="icono-boton">🚀</span>`;
     }
 });
